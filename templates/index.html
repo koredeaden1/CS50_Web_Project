@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Position</th>
+                <th>Value (£)</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="2"><b>Team Value (£)</b></td>
+                <td><b>{{ total }}</b></td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for row in dic %}
+                <tr>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.position }}</td>
+                    <td>{{ row.value }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="2"><b>Remaining Cash (£)</b></td>
+                <td><b>{{ cash }}</b></td>
+            </tr>
+        </tbody>
+    </table>
+    <footer>Feel free to visit <a target = "_blank" href = "https://www.buildlineup.com/">Build Lineup</a> to explore different formations.</footer>
+
+{% endblock %}

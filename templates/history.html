@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Value (£)</th>
+                <th>Type</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in dic %}
+                <tr>
+                    <td>{{ row.player_name }}</td>
+                    <td>{{ row.position }}</td>
+                    <td>{{ row.price }}</td>
+                    <td>{{ row.type }}</td>
+                    <td>{{ row.time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
